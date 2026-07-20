@@ -3,253 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmol Dogra | GenAI & Agentic AI Engineer</title>
+    <title>Anmol Dogra | GenAI Engineer</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --text-color: #cbd5e1;
-            --text-light: #f8fafc;
-            --accent-color: #10b981; /* Neon Emerald for GenAI feel */
-            --accent-secondary: #6366f1; /* Indigo */
-            --card-bg: #111827;
-            --border-color: #1f2937;
+            --bg: #030712;
+            --card-bg: #0b1329;
+            --border: #1f2937;
+            --accent: #10b981; /* GenAI Green */
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --text: #9ca3af;
+            --text-light: #f3f4f6;
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         header {
-            margin-bottom: 4rem;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px var(--accent-glow);
+            margin-bottom: 3rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(99, 102, 241, 0.1));
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
+            color: var(--text-light);
             margin: 0 0 0.5rem 0;
-            color: var(--text-light);
-            font-weight: 800;
-            letter-spacing: -0.025em;
+            font-family: system-ui, sans-serif;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            margin: 0 0 1.5rem 0;
-            font-weight: 600;
-        }
-
-        .subtitle span {
-            color: transparent;
-            background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        .location {
-            color: #6b7280;
-            font-size: 0.95rem;
+        .title-sub {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-top: 1.5rem;
         }
 
         .links a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            background-color: var(--card-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.02);
             transition: all 0.2s;
         }
 
         .links a:hover {
-            border-color: var(--accent-color);
-            background-color: rgba(16, 185, 129, 0.05);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
         }
 
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-family: system-ui, sans-serif;
             color: var(--text-light);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.75rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
         }
 
-        h2::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: linear-gradient(to right, var(--border-color), transparent);
-            margin-left: 1rem;
+        h2::before {
+            content: '> ';
+            color: var(--accent);
+            margin-right: 0.5rem;
         }
 
-        .skills-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .skills-category h3 {
-            font-size: 1rem;
-            color: #9ca3af;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background-color: var(--card-bg);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-color);
-            color: #e2e8f0;
-        }
-
-        .job-card {
-            border-left: 2px solid var(--accent-secondary);
-            padding-left: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .job-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        .job-company {
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-
-        .job-date {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .bullet-list {
-            margin: 0;
-            padding-left: 1.25rem;
-            color: #9ca3af;
-        }
-
-        .bullet-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        .project-grid {
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
 
-        .project-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
+            transition: border-color 0.3s;
         }
 
-        .project-title {
-            font-size: 1.35rem;
-            color: var(--text-light);
-            margin: 0 0 0.5rem 0;
-            font-weight: 700;
+        .card:hover {
+            border-color: #374151;
         }
 
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
+        .tech-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        .achieve-card {
-            background-color: var(--card-bg);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+        .tag {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metric-card {
+            border: 1px dashed var(--border);
+            padding: 1rem;
             text-align: center;
+            border-radius: 6px;
         }
 
-        .achieve-val {
+        .metric-num {
             font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .achieve-title {
-            font-size: 0.95rem;
             color: var(--text-light);
-            font-weight: 600;
-        }
-
-        .achieve-desc {
-            font-size: 0.85rem;
-            color: #6b7280;
-            margin-top: 0.25rem;
+            font-weight: bold;
         }
 
         footer {
-            margin-top: 6rem;
             text-align: center;
+            margin-top: 5rem;
+            font-size: 0.8rem;
             color: #4b5563;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
         }
     </style>
 </head>
@@ -257,147 +173,66 @@
 
     <div class="container">
         <header>
-            <span class="badge">AVAILABLE FOR ADVANCED AI INITIATIVES</span>
             <h1>Anmol Dogra</h1>
-            <div class="subtitle">Software Engineer / <span>AI Engineer</span></div>
-            <div class="location">📍 Pune, Maharashtra | ✉️ anmoldogra52362@gmail.com</div>
-            <p style="font-size: 1.1rem; max-width: 750px; color: #9ca3af;">
-                Specializing in GenAI and Agentic AI systems built with LangChain and LangGraph. 
-                Proven track record of designing and deploying production-grade LLM applications, 
-                multi-agent workflows, and highly optimized scalable backend systems.
+            <div class="title-sub">// AI ENGINEER & BACKEND DEVELOPER</div>
+            <p style="margin: 0; color: #9ca3af; font-size: 0.95rem;">
+                Specializing in production-grade LLM applications, multi-agent orchestrations (LangGraph/LangChain), and high-concurrency architectures. 
             </p>
-            
             <div class="links">
-                <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
-                <a href="https://github.com" target="_blank">💻 GitHub</a>
-                <a href="https://leetcode.com" target="_blank">🏆 LeetCode</a>
-                <a href="https://codechef.com" target="_blank">👨‍💻 CodeChef</a>
-                <a href="https://codeforces.com" target="_blank">🚀 CodeForces</a>
+                <a href="https://linkedin.com" target="_blank">linkedin</a>
+                <a href="https://github.com" target="_blank">github</a>
+                <a href="https://leetcode.com" target="_blank">leetcode</a>
             </div>
         </header>
 
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="job-card">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Software Engineer / AI Engineer</div>
-                        <div class="job-company">Persistent Systems</div>
-                    </div>
-                    <div class="job-date">09/2023 - Present</div>
+        <section>
+            <h2>Core Stack</h2>
+            <div class="card">
+                <div class="tech-box">
+                    <span class="tag">Python</span>
+                    <span class="tag">LangGraph</span>
+                    <span class="skill-tag tag">LangChain</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Pinecone</span>
+                    <span class="tag">FAISS</span>
+                    <span class="tag">MongoDB</span>
                 </div>
-                <ul class="bullet-list">
-                    <li>Designed modular multi-agent architectures using LangGraph and LangChain for workflow automation and intelligent task execution.</li>
-                    <li>Utilized Agent Development Kit (ADK) frameworks to streamline development, testing, and deployment of specialized task-oriented AI agents.</li>
-                    <li>Built production-grade RAG pipelines leveraging vector databases including Pinecone and FAISS for semantic retrieval systems.</li>
-                    <li>Implemented scalable backend services using FastAPI and Docker with support for concurrent and containerized deployments.</li>
-                    <li>Integrated observability and evaluation tooling using the LangSmith and Phoenix stack for debugging and tracing of LLM applications.</li>
-                    <li>Optimized prompts and strategic context management/token window strategies to improve latency, boost response quality, and reduce inference costs.</li>
-                    <li>Developed React-based UI components for workflow visualization and agent execution monitoring.</li>
+            </div>
+        </section>
+
+        <section>
+            <h2>Production Experience</h2>
+            <div class="card" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; color: var(--text-light); font-weight: bold; margin-bottom: 0.5rem;">
+                    <span>Persistent Systems</span>
+                    <span style="color: var(--accent);">09/2023 - Present</span>
+                </div>
+                <div style="font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem;">AI / Software Engineer</div>
+                <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.9rem; color: #9ca3af;">
+                    <li style="margin-bottom: 0.5rem;">Built stateful multi-agent workflows using LangGraph supporting advanced reasoning and failure routing.</li>
+                    <li>Designed robust enterprise RAG pipelines with complex semantic retrieval mechanisms.</li>
+                    <li style="margin-top: 0.5rem;">Optimized inferencing frameworks via targeted token window management and custom evaluation tracking.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Featured AI Platforms</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-title">ProcessIntel & AgentStudio</div>
-                    <div style="color: var(--accent-color); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Enterprise-Grade Agentic Process Automation Platforms</div>
-                    <p style="margin: 0 0 1rem 0; color: #9ca3af;">
-                        Contributed to platforms turning legacy workflows into execution-ready multi-agent systems. 
-                        Designed and implemented LangGraph-based multi-agent workflows supporting planning, reasoning, memory handling, and adaptive execution loops.
-                    </p>
-                    <p style="margin: 0; color: #9ca3af; font-size: 0.9rem;">
-                        <strong>Key Implementations:</strong> Stateful workflow orchestration with conditional routing, custom AI agents utilizing MCP and A2A protocols, and evaluation pipelines via Ragas and DeepEval.
-                    </p>
+        <section>
+            <h2>Metrics & Validation</h2>
+            <div class="grid-2" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="metric-card">
+                    <div class="metric-num">Top 2.5%</div>
+                    <div style="font-size: 0.8rem;">LeetCode Knight</div>
                 </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Expertise</h2>
-            
-            <div class="skills-category">
-                <h3>Languages</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">SQL</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>AI & Backend Frameworks</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">LangGraph</span>
-                    <span class="skill-tag">LangChain</span>
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">Hibernate</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Tools / Databases / Infrastructure</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Pinecone</span>
-                    <span class="skill-tag">FAISS</span>
-                    <span class="skill-tag">LangSmith</span>
-                    <span class="skill-tag">Phoenix</span>
-                    <span class="skill-tag">Ragas</span>
-                    <span class="skill-tag">DeepEval</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="achievements">
-            <h2>Engineering Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achieve-card">
-                    <div class="achieve-val">Grand Prize</div>
-                    <div class="achieve-title">Google Agent Build Challenge</div>
-                    <div class="achieve-desc">APAC Winner with Vertex AI</div>
-                </div>
-                <div class="achieve-card">
-                    <div class="achieve-val">Top 2.5%</div>
-                    <div class="achieve-title">LeetCode Knight</div>
-                    <div class="achieve-desc">Max Rating: 2002</div>
-                </div>
-                <div class="achieve-card">
-                    <div class="achieve-val">5-Star</div>
-                    <div class="achieve-title">CodeChef</div>
-                    <div class="achieve-desc">Max Rating: 2012</div>
-                </div>
-                <div class="achieve-card">
-                    <div class="achieve-val">Expert</div>
-                    <div class="achieve-title">CodeForces</div>
-                    <div class="achieve-desc">Max Rating: 1611</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                <div>
-                    <strong style="color: var(--text-light)">Institute of Engineering and Technology, Indore</strong>
-                    <div style="color: #9ca3af;">Bachelor of Engineering, Information Technology</div>
-                </div>
-                <div style="text-align: right; color: #6b7280;">
-                    <div>08/2019 - 05/2023</div>
-                    <div style="color: var(--accent-color); font-weight: 600;">CGPA: 8.58</div>
+                <div class="metric-card">
+                    <div class="metric-num">5-Star</div>
+                    <div style="font-size: 0.8rem;">CodeChef</div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Anmol Dogra. Handcrafted with clean code.</p>
+            System Status: Online | © 2026 anmoldogra.com
         </footer>
     </div>
 
